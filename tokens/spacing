@@ -1,0 +1,161 @@
+/* =============================================================
+   SPACING, SIZING & LAYOUT â€” Portfolio Design System
+   Source: Figma TailwindCSS variable collection
+   ============================================================= */
+
+:root {
+
+  /* -----------------------------------------------------------
+     SPACING  (4px base grid â€” Tailwind naming)
+  ----------------------------------------------------------- */
+  --sp-0:    0px;
+  --sp-px:   1px;
+  --sp-0-5:  2px;
+  --sp-1:    4px;
+  --sp-1-5:  6px;
+  --sp-2:    8px;
+  --sp-2-5:  10px;
+  --sp-3:    12px;
+  --sp-3-5:  14px;
+  --sp-4:    16px;
+  --sp-5:    20px;
+  --sp-6:    24px;
+  --sp-7:    28px;
+  --sp-8:    32px;
+  --sp-9:    36px;
+  --sp-10:   40px;
+  --sp-11:   44px;
+  --sp-12:   48px;
+  --sp-14:   56px;
+  --sp-16:   64px;
+  --sp-20:   80px;
+  --sp-24:   96px;
+  --sp-28:   112px;
+  --sp-32:   128px;
+  --sp-36:   144px;
+  --sp-40:   160px;
+  --sp-44:   176px;
+  --sp-48:   192px;
+  --sp-52:   208px;
+  --sp-56:   224px;
+  --sp-60:   240px;
+  --sp-64:   256px;
+  --sp-72:   288px;
+  --sp-80:   320px;
+  --sp-96:   384px;
+
+  /* -----------------------------------------------------------
+     SEMANTIC SPACING ROLES (portfolio-specific naming)
+  ----------------------------------------------------------- */
+  --gap-xs:   var(--sp-2);    /* 8px  â€” tight icon/label gaps */
+  --gap-sm:   var(--sp-3);    /* 12px â€” inline element gaps */
+  --gap-md:   var(--sp-4);    /* 16px â€” default component gap */
+  --gap-lg:   var(--sp-6);    /* 24px â€” section element gaps */
+  --gap-xl:   var(--sp-8);    /* 32px â€” large element gaps */
+  --gap-2xl:  var(--sp-12);   /* 48px â€” card/section gaps */
+  --gap-3xl:  var(--sp-16);   /* 64px â€” major section gaps */
+  --gap-4xl:  var(--sp-24);   /* 96px â€” page-level spacing */
+
+  /* Padding aliases */
+  --pad-component: var(--sp-4);   /* 16px â€” button, input, badge padding */
+  --pad-card:      var(--sp-6);   /* 24px â€” card padding */
+  --pad-section:   var(--sp-12);  /* 48px â€” section padding */
+  --pad-page:      var(--sp-24);  /* 96px â€” page vertical padding */
+
+  /* -----------------------------------------------------------
+     BREAKPOINTS  (from Figma breakpoint/* variables)
+  ----------------------------------------------------------- */
+  --bp-sm:   640px;
+  --bp-md:   768px;
+  --bp-lg:   1024px;
+  --bp-xl:   1280px;
+  --bp-2xl:  1536px;
+
+  /* -----------------------------------------------------------
+     CONTAINER WIDTHS  (from Figma container/* variables)
+  ----------------------------------------------------------- */
+  --container-3xs:  256px;
+  --container-2xs:  288px;
+  --container-xs:   320px;
+  --container-sm:   384px;
+  --container-md:   448px;
+  --container-lg:   512px;
+  --container-xl:   576px;
+  --container-2xl:  672px;
+  --container-3xl:  768px;
+  --container-4xl:  896px;
+  --container-5xl:  1024px;
+  --container-6xl:  1152px;
+  --container-7xl:  1280px;
+
+  /* Portfolio max-width */
+  --max-width:      1280px;   /* --container-7xl */
+  --max-width-text: 720px;    /* Readable text column */
+  --max-width-case: 900px;    /* Case study content column */
+
+}
+
+/* =============================================================
+   LAYOUT UTILITIES
+   ============================================================= */
+
+/* Page container */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: var(--sp-6);
+}
+@media (max-width: 768px) {
+  .container { padding-inline: var(--sp-4); }
+}
+
+/* Content columns */
+.col-text    { max-width: var(--max-width-text); }
+.col-case    { max-width: var(--max-width-case); }
+.col-full    { max-width: 100%; }
+
+/* Grid helpers */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--gap-lg);
+}
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gap-lg);
+}
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--gap-md);
+}
+@media (max-width: 768px) {
+  .grid-2, .grid-3, .grid-4 {
+    grid-template-columns: 1fr;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .grid-3, .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Flex helpers */
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.flex-start {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-sm);
+}
