@@ -1,0 +1,150 @@
+/* =============================================================
+   COLORS â€” Portfolio Design System
+   Source: Figma shadcn UI Kit + Artsiom's custom palette
+   ============================================================= */
+
+:root {
+
+  /* -----------------------------------------------------------
+     CUSTOM PALETTE (Artsiom's overrides â€” source of truth)
+  ----------------------------------------------------------- */
+
+  /* Backgrounds */
+  --color-bg-page:         #F2F2F7;   /* App / page background */
+  --color-bg-secondary:    #EAEAF0;   /* Section / secondary surface */
+  --color-bg-light:        #FBFCFE;   /* Card / elevated surface */
+  --color-bg-card:         #FBFCFE;   /* Alias: card background */
+  --color-bg-overlay:      rgba(36, 34, 37, 0.48); /* Modal scrim */
+
+  /* Foreground / Text */
+  --color-fg-primary:      #242225;   /* Body text, headings */
+  --color-fg-secondary:    #68616B;   /* Subtext, descriptions */
+  --color-fg-tertiary:     #AAAAB8;   /* Placeholders, disabled, captions */
+  --color-fg-on-accent:    #FFFFFF;   /* Text on accent backgrounds */
+  --color-fg-on-dark:      #FFFFFF;   /* Text on dark surfaces */
+
+  /* Accent / Brand */
+  --color-accent:          #F34775;   /* Primary CTA, links, focus rings */
+  --color-accent-hover:    #D93364;   /* Hover state (~10% darker) */
+  --color-accent-active:   #C02A57;   /* Pressed/active state */
+  --color-accent-subtle:   #FDE8EE;   /* Accent tint backgrounds */
+  --color-accent-muted:    #FAB8CA;   /* Disabled accent / soft indicators */
+
+  /* Border & Dividers */
+  --color-border:          #D3D3D9;   /* Default borders, inputs */
+  --color-border-subtle:   #E8E8EF;   /* Subtle dividers, separators */
+  --color-border-strong:   #AAAAB8;   /* Emphasized borders */
+  --color-border-focus:    #F34775;   /* Focus ring color */
+
+  /* Semantic States */
+  --color-destructive:     #dc2626;   /* Error, danger */
+  --color-destructive-fg:  #fef2f2;   /* Text on destructive */
+  --color-destructive-subtle: #fee2e2; /* Error background tint */
+
+  --color-success:         #16a34a;
+  --color-success-fg:      #f0fdf4;
+  --color-success-subtle:  #dcfce7;
+
+  --color-warning:         #d97706;
+  --color-warning-fg:      #fffbeb;
+  --color-warning-subtle:  #fef9c3;
+
+  --color-info:            #2563eb;
+  --color-info-fg:         #eff6ff;
+  --color-info-subtle:     #dbeafe;
+
+  /* -----------------------------------------------------------
+     SHADCN SEMANTIC TOKENS (mapped to custom palette)
+     These match the CSS variable names shadcn/ui components expect
+  ----------------------------------------------------------- */
+
+  --background:             var(--color-bg-page);
+  --foreground:             var(--color-fg-primary);
+
+  --card:                   var(--color-bg-light);
+  --card-foreground:        var(--color-fg-primary);
+
+  --popover:                var(--color-bg-light);
+  --popover-foreground:     var(--color-fg-primary);
+
+  --primary:                var(--color-fg-primary);
+  --primary-foreground:     #FFFFFF;
+
+  --secondary:              var(--color-bg-secondary);
+  --secondary-foreground:   var(--color-fg-primary);
+
+  --muted:                  var(--color-bg-secondary);
+  --muted-foreground:       var(--color-fg-secondary);
+
+  --accent:                 var(--color-accent);
+  --accent-foreground:      var(--color-fg-on-accent);
+
+  --destructive:            var(--color-destructive);
+  --destructive-foreground: var(--color-destructive-fg);
+
+  --border:                 var(--color-border);
+  --input:                  var(--color-border);
+  --ring:                   var(--color-accent);
+
+  /* Sidebar tokens */
+  --sidebar:                var(--color-bg-light);
+  --sidebar-foreground:     var(--color-fg-primary);
+  --sidebar-primary:        var(--color-fg-primary);
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent:         var(--color-bg-secondary);
+  --sidebar-accent-foreground: var(--color-fg-primary);
+  --sidebar-border:         var(--color-border);
+  --sidebar-ring:           var(--color-accent);
+
+  /* -----------------------------------------------------------
+     TAILWIND COLOR PRIMITIVES referenced in the file
+     (subset of commonly used neutral palette)
+  ----------------------------------------------------------- */
+
+  --neutral-50:   #fafafa;
+  --neutral-100:  #f5f5f5;
+  --neutral-200:  #e5e5e5;
+  --neutral-300:  #d4d4d4;
+  --neutral-400:  #a3a3a3;
+  --neutral-500:  #737373;
+  --neutral-600:  #525252;
+  --neutral-700:  #404040;
+  --neutral-800:  #262626;
+  --neutral-900:  #171717;
+  --neutral-950:  #0a0a0a;
+
+  /* Alpha overlays */
+  --alpha-white-10: rgba(255, 255, 255, 0.10);
+  --alpha-white-20: rgba(255, 255, 255, 0.20);
+  --alpha-white-50: rgba(255, 255, 255, 0.50);
+  --alpha-black-10: rgba(10, 10, 10, 0.10);
+  --alpha-black-20: rgba(10, 10, 10, 0.20);
+  --alpha-black-50: rgba(10, 10, 10, 0.50);
+
+}
+
+/* =============================================================
+   UTILITY CLASSES â€” Color
+   ============================================================= */
+
+/* Backgrounds */
+.bg-page       { background-color: var(--color-bg-page); }
+.bg-secondary  { background-color: var(--color-bg-secondary); }
+.bg-card       { background-color: var(--color-bg-card); }
+.bg-accent     { background-color: var(--color-accent); }
+.bg-accent-subtle { background-color: var(--color-accent-subtle); }
+.bg-destructive { background-color: var(--color-destructive); }
+
+/* Text */
+.text-primary   { color: var(--color-fg-primary); }
+.text-secondary { color: var(--color-fg-secondary); }
+.text-tertiary  { color: var(--color-fg-tertiary); }
+.text-accent    { color: var(--color-accent); }
+.text-destructive { color: var(--color-destructive); }
+.text-success   { color: var(--color-success); }
+.text-warning   { color: var(--color-warning); }
+
+/* Borders */
+.border-default { border-color: var(--color-border); }
+.border-subtle  { border-color: var(--color-border-subtle); }
+.border-accent  { border-color: var(--color-accent); }
